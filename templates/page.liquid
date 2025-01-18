@@ -1,66 +1,32 @@
-<div class="h-auto min-h-screen mt-12">
-  <div class="max-w-5xl mx-auto relative flex space-x-2">
-    <div class="space-y-2 lg:space-y-4 w-0 flex-grow">
-      {% # 面包屑导航 %}
-      <div class="mb-3">
-        {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
-      </div>
+{% comment %} 页面内容部分 {% endcomment %}
+<main class="flex flex-row min-h-screen bg-gray-100">
 
-      <article class="block p-4 overflow-hidden break-all bg-white border rounded shadow-md">
-        <div class="flex items-center space-x-2 text-xs font-light shrink-0">
-          {% for tag in page.settings.tags %}
-            <a href="{{ tag.path }}" style="background-color: {{ tag.color }}" class="px-2 py-1 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2">
-              {{ tag.name }}
-            </a>
-          {% endfor %}
-          
-          {% assign version_count = page.versions | size %}
-          {% if version_count > 0 %}
-            <ul class="flex space-x-1">
-              <li class="px-2 py-1 border rounded-lg hover:bg-teal-100"><a href="{{ page.path }}">{{'generic.current_version' | t }}</a></li>
-              {% for version_page in page.versions %}
-                <li class="px-2 py-1 border rounded-lg hover:bg-teal-100"><a href="{{ version_page.path | append: '?version=' |  append: version_page.name }}">{{ version_page.name }}</a></li>
-              {% endfor %}
-            </ul>
+  <div class="flex-1 w-0">
+
+    <turbo-frame id="main-content" data-turbo-action="advance" :class="">
+      <div class="px-0 py-0 sm:px-6 sm:py-8 mx-auto space-y-6 max-w-screen-2xl xl:px-12">
+        <article class="w-full px-2 pt-6 pb-8 space-y-6 bg-white rounded-md shadow-sm shadow-gray-200 lg:pb-10 lg:pt-10 lg:px-6">
+          <div class="max-w-screen-md mx-auto">
+            <h2 class="text-2xl font-semibold text-center text-gray-800 md:text-3xl xl:text-4xl">{{ page.settings.title }}</h2>
+            <p class="my-4 text-sm text-center text-gray-600">{{ page.settings.description }}</p>
+          </div>
+          {% if page.settings.thumb_image_url %}
+            <img src="{{ page.settings.thumb_image_url }}" alt="image cover" class="object-cover w-full rounded-lg shadow lg:shadow-lg max-h-96">
           {% endif %}
-          <span class="flex items-center justify-center text-sm font-normal text-gray-400"> ·  {{ 'generic.published_at' | t }}: {{ page.published_at | date: "%Y-%m-%d" }}</span>
-          <span class="flex items-center justify-center text-sm font-normal text-gray-400"> ·  {{ page.visits_count }} {{ 'generic.visits' | t }}</span>
-
-        </div>
-        <h2 class="my-5 text-lg font-bold md:text-2xl leading-8 text-slate-800 dark:text-slate-800">
-          {{ page.settings.title }}
-        </h2>
-        {% if page.settings.thumb_image_url %}
-          <div class="overflow-hidden border rounded">
-            <img class="w-full transition-all duration-500 ease-in-out scale-100 hover:scale-110" src="{{ page.settings.thumb_image_url }}" />
+          <div class="max-w-screen-sm pt-6 mx-auto space-y-6 text-sm text-gray-700">
+            <div class="overflow-x-auto">
+              <div data-controller="view_images" class="ProseMirror break-words">
+                {{ page.settings.content }}
+              </div>
+            </div>
           </div>
-        {% endif %}
-        {% if page.settings.description %}
-          <p class="p-4 my-4 font-light border-l-2 text-slate-700 bg-slate-100 dark:bg-slate-500 dark:text-white">{{ page.settings.description }}</p>
-        {% endif  %}
+        </article>
+      </div>
+    </turbo-frame>
 
-        <div class="overflow-auto max-w-full">
-          <div class="ProseMirror prose sm:prose-base lg:prose-lg focus:outline-none dark:prose-invert">
-            {{ page.settings.content }}
-          </div>
-        </div>
-
-        {% comment %} feedback form {% endcomment %}
-        {%# render "feedback_form", page: page %}
-
-        {% comment %} page children {% endcomment %}
-        <div class="mt-4">
-          {%# render "sub_page_list", page: page %}
-        </div>
-      </article>
-    </div>
-
-    <!-- Sidebar Section -->
-    <aside class="hidden w-72 pl-4 sm:block shrink-0">
-      {% render 'sidebar', site: site %}
-    </aside>
   </div>
-</div>
+</main>
+
 
 {% schema %}
   {

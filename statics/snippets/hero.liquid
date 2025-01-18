@@ -126,7 +126,7 @@
                       <!-- content -->
                       <div class="max-w-full w-full lg:w-4/5 px-4">
                         <div class="mt-12 lg:mt-16 py-6 text-center">
-                          <h1 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-bold text-white capitalize mb-4">Multipurpose <span class="hidden sm:inline-block text-yellow-300">Tailwind</span> Template<br> with core web vital</h1>
+                          <h1 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-bold text-white capitalize mb-4">Multipurpose <span class="hidden sm:inline-block text-yellow-300">Tailwind</span> Template<br> with Baklib CMS</h1>
                           <p class="text-gray-100 leading-relaxed font-light text-xl mx-auto pb-2 mb-12">TailPro <span class="hidden md:inline-block">multipurpose Tailwind</span> template is <span class="text-yellow-300 font-semibold" data-toggle="typed" data-options='{"strings": ["Fast loading", "Easy development", "Seo friendly"]}'></span></p>
 
                           <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-800 bg-yellow-300 border border-yellow-300 hover:text-gray-900 hover:bg-yellow-400 hover:ring-0 hover:border-yellow-400 focus:bg-yellow-400 focus:border-yellow-400 focus:outline-none focus:ring-0" href="#demos">
@@ -212,7 +212,7 @@
                           &lt;!-- content --&gt;
                           &lt;div class="max-w-full w-full lg:w-4/5 px-4"&gt;
                             &lt;div class="mt-12 lg:mt-16 py-6 text-center"&gt;
-                              &lt;h1 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-bold text-white capitalize mb-4"&gt;Multipurpose &lt;span class="hidden sm:inline-block text-yellow-300"&gt;Tailwind&lt;/span&gt; Template&lt;br&gt; with core web vital&lt;/h1&gt;
+                              &lt;h1 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-bold text-white capitalize mb-4"&gt;Multipurpose &lt;span class="hidden sm:inline-block text-yellow-300"&gt;Tailwind&lt;/span&gt; Template&lt;br&gt; with Baklib CMS&lt;/h1&gt;
                               &lt;p class="text-gray-100 leading-relaxed font-light text-xl mx-auto pb-2 mb-12"&gt;TailPro &lt;span class="hidden md:inline-block"&gt;multipurpose Tailwind&lt;/span&gt; template is &lt;span class="text-yellow-300 font-semibold" data-toggle="typed" data-options='{"strings": ["Fast loading", "Easy development", "Seo friendly"]}'&gt;&lt;/span&gt;&lt;/p&gt;
 
                               &lt;a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-800 bg-yellow-300 border border-yellow-300 hover:text-gray-900 hover:bg-yellow-400 hover:ring-0 hover:border-yellow-400 focus:bg-yellow-400 focus:border-yellow-400 focus:outline-none focus:ring-0" href="#demos"&gt;
@@ -257,8 +257,8 @@
                 <div id="hero" class="relative overflow-hidden z-0">
                   <div class="container xl:max-w-6xl mx-auto px-4">
                     <!-- bg wrapper -->
-                    <div class="absolute inset-y-0 start-auto end-0 w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="z-index:-1;background-image: url('../src/img-min/human/advertising.jpg');background-repeat: no-repeat;background-size: cover;"></div>
-                    <div class="absolute inset-y-0 start-auto end-0 lg:hidden w-full bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="z-index:-1;background-image: url('../src/img-min/human/advertising.jpg');background-repeat: no-repeat;background-size: cover;"></div>
+                    <div class="absolute inset-y-0 start-auto end-0 w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="z-index:-1;background-image: url({{ 'images/img-min/advertising.jpg' | asset_url }});background-repeat: no-repeat;background-size: cover;"></div>
+                    <div class="absolute inset-y-0 start-auto end-0 lg:hidden w-full bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="z-index:-1;background-image: url({{ 'images/img-min/advertising.jpg' | asset_url }});background-repeat: no-repeat;background-size: cover;"></div>
                     <div class="absolute inset-y-0 end-auto start-0 hidden lg:block h-full w-1/2 bg-primary-700" style="z-index:-1;"></div>
 
                     <div class="flex flex-wrap flex-row">
@@ -599,7 +599,7 @@
                                 </clipPath>
                               </defs>
                               <!-- Source image -->
-                              <image transform="matrix(1 0 0 1 0 0)" clip-path="url(#svg-mask1)" xlink:href="../src/img-min/human/hero-agency.jpg" width="235" height="200"></image>
+                              <image transform="matrix(1 0 0 1 0 0)" clip-path="url(#svg-mask1)" xlink:href="{{ 'images/img-min/hero-agency.jpg' | asset_url }}"width="235" height="200"></image>
                             </svg>
                           </figure>
                         </div>
@@ -653,7 +653,7 @@
                                     &lt;/clipPath&gt;
                                   &lt;/defs&gt;
                                   &lt;!-- Source image --&gt;
-                                  &lt;image transform="matrix(1 0 0 1 0 0)" clip-path="url(#svg-mask1)" xlink:href="src/img-min/human/hero-agency.jpg" width="235" height="200"&gt;&lt;/image&gt;
+                                  &lt;image transform="matrix(1 0 0 1 0 0)" clip-path="url(#svg-mask1)" xlink:href="{{ 'images/img-min/hero-agency.jpg' | asset_url }}"width="235" height="200"&gt;&lt;/image&gt;
                                 &lt;/svg&gt;
                               &lt;/figure&gt;
                             &lt;/div&gt;
@@ -784,7 +784,7 @@
                 <!-- hero start -->
                 <div id="hero" class="relative overflow-hidden bg-primary-700 z-0">
                   <!-- bg wrapper -->
-                  <div class="absolute inset-y-0 start-auto end-0 w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="background-image: url('../src/img-min/human/marketing.jpg');background-repeat: no-repeat;background-size: cover;z-index: -1;"></div>
+                  <div class="absolute inset-y-0 start-auto end-0 w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="background-image: url({{ 'images/img-min/marketing.jpg' | asset_url }});background-repeat: no-repeat;background-size: cover;z-index: -1;"></div>
                   <div class="absolute inset-y-0 end-auto start-0 block lg:hidden h-full w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20" style="z-index:-1"></div>
 
                   <div class="container xl:max-w-6xl mx-auto px-4">
@@ -799,7 +799,7 @@
                       <!-- content block -->
                       <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 lg:order-1 my-auto">
                         <div class="pt-8 pb-12 md:pb-24">
-                          <div class="bg-primary-700 rounded mjkldisyjal lg:p-12 lg:px-0 lg:py-6 mt-8 md:mt-12 md:pt-16 text-center lg:text-start wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
+                          <div class="bg-primary-700 rounded p-6 lg:p-12 lg:px-0 lg:py-6 mt-8 md:mt-12 md:pt-16 text-center lg:text-start wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
                             <h1 class="text-4xl lg:text-5xl leading-normal lg:leading-tight font-semibold text-gray-100  mb-4">The next level <span class="text-yellow-300">Digital Marketing</span> Agency</h1>
                             <p class="leading-relaxed font-light text-xl mx-auto pb-2 mb-12 text-gray-50">If you have a great product or service but are confused about marketing plans, we are the right solution for you.</p>
                             <img src="{{ 'images/img-min/google-suite.jpg' | asset_url }}" class="inline-block mb-3 md:mb-0 max-w-full rounded max-h-16 me-3" alt="Partnership">
@@ -832,7 +832,7 @@
                           &lt;!-- content block --&gt;
                           &lt;div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 lg:order-1 my-auto"&gt;
                             &lt;div class="pt-8 pb-12 md:pb-24"&gt;
-                              &lt;div class="bg-primary-700 rounded mjkldisyjal lg:p-12 lg:px-0 lg:py-6 mt-8 md:mt-12 md:pt-16 text-center lg:text-start wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s"&gt;
+                              &lt;div class="bg-primary-700 rounded p-6 lg:p-12 lg:px-0 lg:py-6 mt-8 md:mt-12 md:pt-16 text-center lg:text-start wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s"&gt;
                                 &lt;h1 class="text-4xl lg:text-5xl leading-normal lg:leading-tight font-semibold text-gray-100  mb-4"&gt;The next level &lt;span class="text-yellow-300"&gt;Digital Marketing&lt;/span&gt; Agency&lt;/h1&gt;
                                 &lt;p class="leading-relaxed font-light text-xl mx-auto pb-2 mb-12 text-gray-50"&gt;If you have a great product or service but are confused about marketing plans, we are the right solution for you.&lt;/p&gt;
                                 &lt;img src="{{ 'images/img-min/google-suite.jpg' | asset_url }}" class="inline-block mb-3 md:mb-0 max-w-full rounded max-h-16 me-3" alt="Partnership"&gt;
@@ -954,9 +954,9 @@
                                 </clipPath>
                               </defs>
                               <!-- Phone screen -->
-                              <image clip-path="url(#svgf)" xlink:href="../src/img-min/app/app1-android.jpg" height="94%" width="100%" style="transform:translateY(15px);"></image>
+                              <image clip-path="url(#svgf)" xlink:href="../{{ 'images/img-min/app1-android.jpg' | asset_url }}" height="94%" width="100%" style="transform:translateY(15px);"></image>
                               <!-- Phone cover -->
-                              <image xlink:href="../src/img-min/app/device/android-dark.png" height="100%" width="100%"></image>
+                              <image xlink:href="{{ 'images/img-min/android-dark.png' | asset_url }}"height="100%" width="100%"></image>
                             </svg>
                           </figure>
 
@@ -969,9 +969,9 @@
                                 </clipPath>
                               </defs>
                               <!-- Phone screen -->
-                              <image clip-path="url(#svgf1)" xlink:href="../src/img-min/app/app1.jpg" height="92%" width="100%" style="transform:translateY(30px);"></image>
+                              <image clip-path="url(#svgf1)" xlink:href="../{{ 'images/img-min/app1.jpg' | asset_url }}" height="92%" width="100%" style="transform:translateY(30px);"></image>
                               <!-- Phone cover -->
-                              <image xlink:href="../src/img-min/app/device/iphone-dark.png" height="100%" width="100%"></image>
+                              <image xlink:href="../{{ 'images/img-min/iphone-dark.png' | asset_url }}" height="100%" width="100%"></image>
                             </svg>
                           </figure>
                         </div>
@@ -1070,9 +1070,9 @@
                                     &lt;/clipPath&gt;
                                   &lt;/defs&gt;
                                   &lt;!-- Phone screen --&gt;
-                                  &lt;image clip-path="url(#svgf)" xlink:href="src/img-min/app/app1-android.jpg" height="94%" width="100%" style="transform:translateY(15px);"&gt;&lt;/image&gt;
+                                  &lt;image clip-path="url(#svgf)" xlink:href="{{ 'images/img-min/app1-android.jpg' | asset_url }}" height="94%" width="100%" style="transform:translateY(15px);"&gt;&lt;/image&gt;
                                   &lt;!-- Phone cover --&gt;
-                                  &lt;image xlink:href="src/img-min/app/device/android-dark.png" height="100%" width="100%"&gt;&lt;/image&gt;
+                                  &lt;image xlink:href="{{ 'images/img-min/android-dark.png' | asset_url }}"height="100%" width="100%"&gt;&lt;/image&gt;
                                 &lt;/svg&gt;
                               &lt;/figure&gt;
 
@@ -1085,9 +1085,9 @@
                                     &lt;/clipPath&gt;
                                   &lt;/defs&gt;
                                   &lt;!-- Phone screen --&gt;
-                                  &lt;image clip-path="url(#svgf1)" xlink:href="src/img-min/app/app1.jpg" height="92%" width="100%" style="transform:translateY(30px);"&gt;&lt;/image&gt;
+                                  &lt;image clip-path="url(#svgf1)" xlink:href="{{ 'images/img-min/app1.jpg' | asset_url }}" height="92%" width="100%" style="transform:translateY(30px);"&gt;&lt;/image&gt;
                                   &lt;!-- Phone cover --&gt;
-                                  &lt;image xlink:href="src/img-min/app/device/iphone-dark.png" height="100%" width="100%"&gt;&lt;/image&gt;
+                                  &lt;image xlink:href="{{ 'images/img-min/iphone-dark.png' | asset_url }}" height="100%" width="100%"&gt;&lt;/image&gt;
                                 &lt;/svg&gt;
                               &lt;/figure&gt;
                             &lt;/div&gt;
@@ -1232,7 +1232,7 @@
                         <div class="relative rounded-md overflow-hidden">
                           <img src="{{ 'images/img-min/social.svg' | asset_url }}" class="max-w-full w-full h-auto" alt="background images">
                           <div class="absolute start-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 lightgallery-thumbnail">
-                            <a id="preview-video2" aria-label="Introcluding Upgency" href="https://www.youtube.com/watch?v=nOsKM0cb0qE" class="p-5 ropjaksldnk leading-5 text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 relative">
+                            <a id="preview-video2" aria-label="Introcluding Upgency" href="https://www.youtube.com/watch?v=nOsKM0cb0qE" class="p-5 rounded-full leading-5 text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 relative">
                               <svg class="bi bi-play-fill inline-block" width="1.5rem" height="1.5rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"></path>
                               </svg>
@@ -1272,7 +1272,7 @@
                             &lt;div class="relative rounded-md overflow-hidden"&gt;
                               &lt;img src="{{ 'images/img-min/social.svg' | asset_url }}" class="max-w-full w-full h-auto" alt="background images"&gt;
                               &lt;div class="absolute start-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 lightgallery-thumbnail"&gt;
-                                &lt;a id="preview-video2" aria-label="Introcluding Upgency" href="https://www.youtube.com/watch?v=nOsKM0cb0qE" class="p-5 ropjaksldnk leading-5 text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 relative"&gt;
+                                &lt;a id="preview-video2" aria-label="Introcluding Upgency" href="https://www.youtube.com/watch?v=nOsKM0cb0qE" class="p-5 rounded-full leading-5 text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 relative"&gt;
                                   &lt;svg class="bi bi-play-fill inline-block" width="1.5rem" height="1.5rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"&gt;
                                     &lt;path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"&gt;&lt;/path&gt;
                                   &lt;/svg&gt;

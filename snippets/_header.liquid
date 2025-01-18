@@ -6,8 +6,8 @@
         <!-- mobile navigation -->
         <div class="flex flex-row justify-between py-3 lg:hidden">
             <!-- logo -->
-            <a class="flex items-center py-2 me-4 text-xl" href="/s/index">
-            <span class="text-4xl font-semibold dark:text-gray-100">Tail<span class="text-primary-700">Pro.</span></span>
+            <a class="flex items-center py-2 me-4 text-xl" href="/">
+            <span class="text-4xl font-semibold dark:text-gray-100"><span class="text-primary-700">{{ site.name }}</span></span>
             <!-- <img class="max-w-full h-auto" src="{{ 'images/img/logo.png' | asset_url }}" alt="Logo dark"> -->
             </a>
 
@@ -43,8 +43,8 @@
             <div class="mb-auto">
                 <!--logo-->
                 <div class="mh-18 text-center px-12 mb-8">
-                <a href="#" class="flex relative">
-                    <span class="text-4xl font-semibold px-4 dark:text-gray-200">Tail<span class="text-primary-700">Pro.</span></span>
+                <a href="/" class="flex relative">
+                    <span class="text-4xl font-semibold px-4 dark:text-gray-200"><span class="text-primary-700">{{ site.name }}</span></span>
                     <!-- <img src="{{ 'images/img/logo.png' | asset_url }}" class="max-w-full h-auto" alt="logo"> -->
                     <span class="absolute -bottom-4 transform ltr:translate-x-1/2 rtl:-translate-x-1/2 w-20 h-0 border-t-2 border-opacity-50 border-primary-700 mx-auto"></span>
                 </a>
@@ -55,7 +55,7 @@
                 <nav class="relative flex flex-wrap items-center justify-between">
                     <ul id="side-menu" class="w-full float-none flex flex-col">
                     <li class="relative">
-                        <a href="/s/index" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Home</a>
+                        <a href="/" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Home</a>
                     </li>
                     <li class="relative">
                         <a href="/s/snippets/index" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Snippets</a>
@@ -138,40 +138,16 @@
                         </ul>
                     </li>
 
-                    <!-- dropdown -->
-                    <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @click.away="open = false">
-                        <a id="mobiledrop-03" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="javascript:;" @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" :class="{ 'text-primary-700 dark:text-gray-100': open }">
-                        Docs
-                        <!-- caret -->
-                        <span class="inline-block float-end mt-1 pt-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="transform transition duration-300" :class="{ 'rotate-0' : open , 'ltr:-rotate-90 rtl:rotate-90' : !open }" width=".8rem" height=".8rem" fill="currentColor" viewBox="0 0 512 512"><polyline points="112 184 256 328 400 184" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"/></svg>
-                        </span>
-                        </a>
-
-                        <!-- dropdown menu -->
-                        <ul class="block rounded rounded-t-none top-full z-50 py-0.5 text-start bg-white dark:bg-gray-800 mb-4" style="min-width: 12rem" x-description="Dropdown menu" x-show="open" role="menu" aria-orientation="vertical" aria-labelledby="mobiledrop-03">
-                        <li class="relative">
-                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/index">Documentation</a>
-                        </li>
-                        <li class="relative">
-                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/components/alerts">Components</a>
-                        </li>
-                        <li class="relative">
-                            <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/started/changelog">Changelog</a>
-                        </li>
-                        </ul>
-                    </li>
-
                     <li class="relative">
-                        <a href="/s/docs/support" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Support</a>
+                        <a href="https://www.baklib.cn" target="_blank" class="block py-3 px-4 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Template Support</a>
                     </li>
                     </ul>
                 </nav>
                 </div>
             </div>
             <!-- copyright -->
-            <div class="mt-5 text-center">
-                <p>Copyright <a href="#">TailPro</a> - All right reserved</p>
+            <div class="mt-5 text-center text-xs">
+                <p><a href="/">{{ site.name }}.</a> - All right reserved</p>
             </div>
             </nav>
         </div><!-- End Mobile menu -->
@@ -179,8 +155,8 @@
         <!-- desktop menu -->
         <div class="hidden lg:flex lg:flex-row lg:flex-nowrap lg:items-center lg:justify-between lg:mt-0" id="desktp-menu">
             <!-- logo -->
-            <a class="hidden lg:flex items-center py-2 me-4 text-xl" href="/s/index">
-            <span class="text-4xl font-semibold dark:text-gray-100">Tail<span class="text-primary-700">Pro.</span></span>
+            <a class="hidden lg:flex items-center py-2 me-4 text-xl" href="/">
+            <span class="text-4xl font-semibold dark:text-gray-100"><span class="text-primary-700">{{ site.name }}</span></span>
             </a>
 
             <!-- menu -->
@@ -311,7 +287,7 @@
                     </div>
                     </div>
                     <div class="flex-shrink w-full px-4 text-center border-t border-gray-200 dark:border-gray-900 dark:bg-opacity-40">
-                    <div class="olhksnamska text-sm">Pre-build landing pages for your professional Agency.</div>
+                    <div class="p-4 text-sm">Pre-build landing pages for your professional Agency.</div>
                     </div>
                 </div>
                 </div>
@@ -400,43 +376,13 @@
                 </ul>
             </li>
 
-            <!-- dropdown -->
-            <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false" @mouseleave="open = false">
-                <a id="dropdown-01" class="group block py-3 lg:py-7 px-6 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="javascript:;" @mouseenter="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" :class="{ 'text-primary-700 dark:text-gray-100': open }">
-                <span class="absolute bottom-4 start-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-primary-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100" :class="{ 'opacity-100': open }"></span>
-                Docs
-                <!-- caret -->
-                <span class="inline-block ms-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem" fill="currentColor" viewBox="0 0 512 512"><polyline points="112 184 256 328 400 184" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"/></svg>
-                </span>
-                </a>
-                <!-- dropdown menu -->
-                <ul class="block absolute start-1/2 end-auto transform ltr:-translate-x-1/2 rtl:translate-x-1/2 border-t-2 border-primary-700 rounded rounded-t-none top-full z-50 py-0.5 text-start bg-white dark:bg-gray-800 shadow-md" style="min-width: 12rem;display:none" x-description="Dropdown menu" x-show="open" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-01" x-transition:enter="transition duration-200" x-transition:enter-start="transform opacity-0 translate-y-4" x-transition:enter-end="transform opacity-100 translate-y-0" x-transition:leave="transition translate-y-4" x-transition:leave-start="transform opacity-100 translate-y-0" x-transition:leave-end="transform opacity-0 translate-y-4">
-                <li class="relative">
-                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/index">Documentation</a>
-                </li>
-                <li class="relative">
-                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/components/alerts">Components</a>
-                </li>
-                <li class="relative">
-                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/started/changelog">Changelog</a>
-                </li>
-                </ul>
-            </li>
-
-            <li class="relative">
-                <a class="group block py-3 lg:py-7 px-6 hover:text-primary-700 focus:text-primary-700 dark:hover:text-gray-100 dark:focus:text-gray-100" href="/s/docs/support">
-                <span class="absolute bottom-4 start-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-primary-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                Support
-                </a>
-            </li>
             </ul>
             
             <!-- button -->
             <div class="grid text-center lg:block my-4 lg:my-auto">
-            <a class="py-2 px-4 text-sm inline-block text-center rounded-md leading-normal text-gray-100 bg-primary-700 border border-primary-700 hover:text-white hover:bg-primary-800 hover:ring-0 hover:border-primary-800 focus:bg-primary-800 focus:border-primary-800 focus:outline-none focus:ring-0" target="_blank" rel="noopener" href="https://aribudin.gumroad.com/l/tailpro?wanted=true&amp;variant=Single%20License">
-                <svg xmlns="http://www.w3.org/2000/svg" class="inline me-1" width="1.2rem" height="1.2rem" fill="currentColor" viewBox="0 0 512 512"><circle cx="176" cy="416" r="16" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><circle cx="400" cy="416" r="16" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><polyline points="48 80 112 80 160 352 416 352" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><path d="M160,288H409.44a8,8,0,0,0,7.85-6.43l28.8-144a8,8,0,0,0-7.85-9.57H128" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg> Buy Now
-            </a>
+                <a class="py-2 px-4 text-sm inline-block text-center rounded-md leading-normal text-gray-100 bg-primary-700 border border-primary-700 hover:text-white hover:bg-primary-800 hover:ring-0 hover:border-primary-800 focus:bg-primary-800 focus:border-primary-800 focus:outline-none focus:ring-0" target="_blank" rel="noopener" href="https://help.baklib.cn/themes/tailpro">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="inline me-1" width="1.2rem" height="1.2rem" fill="currentColor" viewBox="0 0 512 512"><circle cx="176" cy="416" r="16" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><circle cx="400" cy="416" r="16" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><polyline points="48 80 112 80 160 352 416 352" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><path d="M160,288H409.44a8,8,0,0,0,7.85-6.43l28.8-144a8,8,0,0,0-7.85-9.57H128" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg> Install Template
+                </a>
             </div>
         </div><!-- end desktop menu -->
         </div>
