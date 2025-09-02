@@ -17,6 +17,9 @@
     "read_more": "阅读更多",
     "404": "404 页面找不到",
     "403": "403 无访问权限",
+    "next_page": "下一页",
+    "prev_page": "上一页",
+    "page": "页",
     "copyright": "版权所有",
     "current_version": "当前版本"
   },

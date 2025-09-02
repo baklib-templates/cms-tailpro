@@ -9,11 +9,11 @@
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/tailpro",
     "theme_support_url": "https://help.baklib.cn/themes/tailpro/settings",
-    "theme_thumb_url": "images/theme/thumb.png",
+    "theme_thumb_url": "images/theme/thumb.webp",
     "theme_preview_images": [
-      "images/theme/index.png",
-      "images/theme/index-1.png",
-      "images/theme/index-2.png",
+      "images/theme/index.webp",
+      "images/theme/channel-card.webp",
+      "images/theme/channel-side.webp",
       "images/theme/project1.jpg",
       "images/theme/project2.jpg",
       "images/theme/project3.jpg"
@@ -59,15 +59,31 @@
           "default": true,
           "pages": [
             {
-              "name": "Where the world builds software",
-              "slug": "page1",
-              "template": "page"
+              "name": "关于我们",
+              "slug": "about",
+              "template": "channel.side"
             },
             {
-              "name": "Ready for the future",
-              "slug": "page2",
-              "template": "page"
+              "name": "服务项目",
+              "slug": "services",
+              "template": "channel.list"
+            },
+            {
+              "name": "产品中心",
+              "slug": "products",
+              "template": "channel.list"
+            },
+            {
+              "name": "新闻资讯",
+              "slug": "news",
+              "template": "channel"
+            },
+            {
+              "name": "视频中心",
+              "slug": "videos",
+              "template": "channel.videos"
             }
+            
           ]
         }
       }
@@ -79,33 +95,86 @@
       {
         "id": "logo_url",
         "type": "image_picker",
-        "ratio": "3:1",
+        "ratio": "6:2",
         "width": 150,
         "label": "t:settings_schema.generic.settings.logo_url.label",
         "info": "t:settings_schema.generic.settings.logo_url.info"
       },
       {
+        "id": "default_avatar_url",
+        "type": "image_picker",
+        "ratio": "1:1",
+        "width": 150,
+        "label": "默认作者头像",
+        "info": "展示在文章作者信息处，建议尺寸150x150px"
+      },
+      {
+        "id": "default_thumb_url",
+        "type": "image_picker",
+        "ratio": "4:3",
+        "width": 250,
+        "label": "默认文章方面图",
+        "info": "展示在文章列表封面图，建议尺寸400x300px"
+      },
+      {
+        "id": "video_url",
+        "type": "video_picker",
+        "ratio": "4:3",
+        "width": 250,
+        "label": "公司介绍视频",
+        "info": "展示在首页的‘关于我们’栏目"
+      },
+      {
         "id": "slogan",
         "type": "text",
         "label": "t:settings_schema.generic.settings.slogan.label",
-        "default": "Shaping a world with reimagination."
+        "default": "我们是一家创意公司，服务于各行各业的本地和国际企业，从小型到大型企业。"
       },
       {
-        "id": "copyright_info",
+        "id": "domain",
         "type": "text",
-        "label": "t:settings_schema.generic.settings.copyright_info.label",
-        "placeholder": "t:settings_schema.generic.settings.copyright_info.placeholder"
+        "label": "t:settings_schema.generic.settings.slogan.label",
+        "default": "https://www.baklib.cn/"
       },
       {
-        "id": "is_allow_feedback",
-        "type": "checkbox",
-        "label": "t:settings_schema.generic.settings.is_allow_feedback.label",
-        "default": true
+        "id": "request_title",
+        "type": "text",
+        "label": "导航按钮文字",
+        "default": "联系我们"
+      },
+      {
+        "id": "request_url",
+        "type": "text",
+        "label": "导航按钮链接",
+        "default": "https://help.baklib.cn/themes/tailpro",
+        "info": "请填写https://开头的 URL 地址；设置以后会在文章页底部显示'Submit a request'链接"
       }
     ]
   },
   {
-    "name": "t:settings_schema.nav.head_title",
+    "name": "定制页面版块设计",
+    "settings": [
+      {"id": "cta_title","type": "html","label": "首页CTA行动号召（50 字以内）"},
+      {
+        "id": "brand_logos",
+        "type": "textarea",
+        "label": "客户案例LOGO墙",
+        "rows": 10,
+        "info": "客户案例/合作伙伴 LOGO 墙，每行一个 LOGO URL 地址",
+        "default": ""
+      },
+      {
+        "id": "aside_html",
+        "type": "html",
+        "label": "侧边栏广告代码",
+        "info": "显示在文章页和频道页的侧边栏位置，支持 HTML 代码",
+        "rows": 10,
+        "placeholder": "<div style=\"padding: 10px; border: 1px solid #eee; text-align: center;\">Your Ad Here</div>"
+      }
+    ]
+  },
+  {
+    "name": "页头页脚设置",
     "settings": [
       {
         "id": "head_html",
@@ -114,6 +183,28 @@
         "info": "t:settings_schema.nav.settings.head_html.info",
         "rows": 10,
         "placeholder": "t:settings_schema.nav.settings.head_html.placeholder"
+      },
+      {
+        "id": "header_menu",
+        "type": "textarea",
+        "label": "页头导航菜单设置",
+        "rows": 10,
+        "info": "格式：menu_name[slug{sub_menu[slug|sub_menu[slug，每行一个分栏。",
+        "default": "Home[/\nNews[/news\nVideos[/videos\nProducts[/products\nFAQs[/faqs\nSitemap[/s/sitemap"
+      },
+      {
+        "id": "footer_menu",
+        "type": "textarea",
+        "label": "页脚菜单设置",
+        "rows": 10,
+        "info": "格式：menu_name[slug]{sub_menu[slug|sub_menu[slug，每行一个分栏。",
+        "default": "Products[/products{Catalog1[/products/pro1|Catalog2[/products/pro2\nVideos[/videos{Catalog1[/products/pro1|Catalog2[/products/pro2\nNews[/news{Catalog1[/products/pro1|Catalog2[/products/pro2"
+      },
+      {
+        "id": "company_info",
+        "type": "text",
+        "label": "页脚公司信息",
+        "default": "Tailwind template designer, we build web templates, themes and other goodies, putting a lot of love in every pixel and design."
       }
     ]
   }

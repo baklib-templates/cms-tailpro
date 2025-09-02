@@ -15,6 +15,9 @@
     "recent_news": "Recent News",
     "404": "404 not found",
     "403": "403 No access permission",
+    "next_page": "Next Page",
+    "prev_page": "Previous Page",
+    "page": "Page",
     "copyright": "All rights reserved",
     "current_version": "Current Version"
   },
