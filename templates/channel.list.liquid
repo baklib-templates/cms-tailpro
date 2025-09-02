@@ -50,32 +50,8 @@
           </div>
 
           <!-- sidebar -->
-          <div class="flex-shrink w-full max-w-full lg:w-1/3 lg:ps-16">
-            <aside class="sticky mt-12 lg:mt-0">
-              <!-- widget -->
-              <aside id="categories" class="widget mb-4">
-                <h4 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100"><span>快速导航</span></h4>
-                <ul>
-                  {% for ch in channels %}
-                    <li>
-                      <a class="py-2 flex justify-between items-center hover:text-primary-700 dark:hover:text-gray-100" href="{{ ch.path }}">
-                        {{ ch.link_text }}
-                        <span class="text-sm py-1 px-2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20 text-primary-700 dark:text-gray-200 rounded">{{ ch.pages_in_list | size }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
-                  
-                </ul>
-              </aside><!-- end widget -->
-
-              <!-- widget -->
-              {% if site.settings.aside_html %}
-                <aside id="meta" class="widget mb-4">
-                  {{ site.settings.aside_html }}
-                </aside><!-- end widget -->
-              {% endif %}
-            </aside>          
-          </div><!-- end sidebar -->
+          {% render 'sidebar' %}
+          <!-- end sidebar -->
         </div>
       </div>
     </div>
@@ -105,22 +81,11 @@
         "label": "t:settings_schema.page.settings.description.label"
       },
       {
-        "id": "tags",
-        "type": "tag_picker",
-        "multiple": true,
-        "label": "t:settings_schema.page.settings.tags.label"
-      },
-      {
         "id": "thumb_image_url",
         "type": "image_picker",
-        "ratio": "4:3",
+        "ratio": "6:2",
         "width": 240,
-        "label": "t:settings_schema.page.settings.thumb_image_url.label"
-      },
-      {
-        "id": "content",
-        "type": "richtext",
-        "label": "t:settings_schema.page.settings.content.label"
+        "label": "背景封面图"
       }
     ]
   }

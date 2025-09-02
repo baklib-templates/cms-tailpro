@@ -88,7 +88,7 @@
   
   <!-- =========={ ABOUT }==========  -->
   {% if about_page %}
-    <div id="about" class="relative py-12 md:py-16 bg-white dark:bg-gray-800">
+    <div id="about" class="relative py-6 md:py-10 bg-white dark:bg-gray-800">
       <div class="container xl:max-w-6xl mx-auto px-4">
         <div class="flex flex-wrap flex-row -mx-4">
           <!-- content -->
@@ -113,13 +113,7 @@
             <div class="relative rounded-md overflow-hidden hover:shadow-xl">
               <img src="{{ about_page.settings.thumb_image_url |  default: default_about_image }}" class="max-w-full w-full h-auto" alt="background images">
               <div class="absolute start-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 lightgallery-thumbnail">
-                {% if site.settings.video_url %}
-                  <a id="preview-video2" aria-label="Introcluding Upgency" href="{{ site.settings.video_url }}" class="p-5 rounded-full leading-5 text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0 relative">
-                    <svg class="bi bi-play-fill inline-block" width="1.5rem" height="1.5rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 010 1.393z"></path>
-                    </svg>
-                  </a>
-                {% endif %}
+                
               </div>
             </div>
           </div><!-- end team -->
@@ -133,7 +127,7 @@
 
   <!-- =========={ SERVICE }==========  -->
   {% if service_page %}
-    <div id="service" class="relative py-12 md:py-16 bg-white dark:bg-gray-800">
+    <div id="service" class="relative py-6 md:py-10 bg-white dark:bg-gray-800">
       <div class="container xl:max-w-6xl mx-auto px-4">
         <!-- section header -->
         <header class="text-center mx-auto mb-12 lg:px-20">
@@ -154,7 +148,7 @@
                   <!-- icon -->
                   <img src="{{ item.settings.thumb_image_url |  default: default_icon_url }}" class=""/>
                 </div>
-                <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-700 hover:text-primary"><a href="{{ item.path }}">{{ item.link_text }}</a></h3>
+                <a href="{{ item.path }}" class="text-lg leading-normal mb-2 font-semibold text-gray-700 hover:text-primary hover:underline">{{ item.link_text }}</a>
                 <p class="line-clamp-3">{{ item.settings.description }}</p>
               </div><!-- end service block -->
             </div>
@@ -272,16 +266,16 @@
 
   <!-- =========={ Brand }==========  -->
   {% if brand_logos_size > 1 %}
-    <div id="partner-brand" class="relative py-16 bg-white dark:bg-gray-800">
+    <div id="partner-brand" class="relative py-6 bg-white dark:bg-gray-800">
       <div class="container xl:max-w-6xl mx-auto px-4">
         <div class="lex flex-wrap flex-row -mx-4 justify-center">
           <div class="w-full px-4">
             <!-- slider brand -->
             <div class="nav-dark-button" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
               {% for url in brand_logos %}
-                <div class="flex-shrink max-w-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-6 lg:px-12 text-center">
+                <div class="flex-shrink max-w-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-3 lg:px-6 text-center">
                   <a href="javascript:void(0);" target="_blank">
-                    <img class="brands-image mx-auto opacity-80 hover:opacity-100 max-w-full h-auto" src="{{ url }}" alt="Brand LOGO">
+                    <img class="brands-image2 mx-auto hover:opacity-80 max-w-full h-auto" src="{{ url }}" alt="Brand LOGO">
                   </a>
                 </div>
               {% endfor %}
@@ -296,7 +290,7 @@
 
 </main>
 
-<section class="relative max-w-6xl mx-auto  mt-12">
+<section class="relative max-w-6xl mx-auto mt-12">
     <!-- Background image -->
     <div class="absolute inset-0 pt-16 box-content -z-1">
         <img class="absolute inset-0 w-full h-full object-cover opacity-60" src="{{ default_hero_image }}" width="1280" height="400" alt="数塔.Datale Hero About">
@@ -383,25 +377,8 @@
 </section>
 
 <!-- =========={ CTA }==========  -->
-<div id="cta" class="relative py-20 md:py-24 jarallax">
-  <!-- background parallax -->
-  <img class="jarallax-img" src="{{ 'images/img-min/bg3.jpg' | asset_url }}" alt="title">
-
-  <!-- background overlay -->
-  <div class="absolute top-0 start-0 w-full h-full opacity-90 bg-primary-700" style="z-index:-1;"></div>
-
-  <div class="container xl:max-w-6xl mx-auto px-4 text-center">
-    <h3 class="text-3xl leading-normal font-semibold text-gray-100 mb-12">
-      {{ site.settings.cta_title | default: '我们通过设计和创意帮助企业开拓市场。我们是一家创意公司，服务于各行各业的本地和国际企业，从小型到大型企业。' }}</h3>
-
-    <!-- buttom -->
-    {% if site.settings.request_url %}
-      <a href="{{ site.settings.request_url }}" class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-transparent border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:text-gray-900 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0">
-        {{ site.settings.request_title }}
-      </a>
-    {% endif %}
-  </div>
-</div><!-- End cta -->
+{% render 'cta/cta_one' %}
+<!-- End cta -->
 
 {% schema %}
     {

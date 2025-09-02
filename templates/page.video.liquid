@@ -35,8 +35,8 @@
               {% render 'play_youtube_video', item: page %}
           {% else %}
               <video class="w-full h-auto max-w-full"  controls>
-              <source src="{{ page.settings.video_url }}" type="video/mp4"> 
-              Your browser does not support the video tag.
+                <source src="{{ page.settings.video_url }}" type="video/mp4"> 
+                Your browser does not support the video tag.
               </video>
           {% endif %}
         </div>
@@ -190,6 +190,12 @@
         "id": "description",
         "type": "textarea",
         "label": "摘要"
+      },
+      {
+        "id": "tags",
+        "type": "tag_picker",
+        "multiple": true,
+        "label": "t:settings_schema.page.settings.tags.label"
       },
       {
         "id": "content",

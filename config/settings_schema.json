@@ -101,30 +101,6 @@
         "info": "t:settings_schema.generic.settings.logo_url.info"
       },
       {
-        "id": "default_avatar_url",
-        "type": "image_picker",
-        "ratio": "1:1",
-        "width": 150,
-        "label": "默认作者头像",
-        "info": "展示在文章作者信息处，建议尺寸150x150px"
-      },
-      {
-        "id": "default_thumb_url",
-        "type": "image_picker",
-        "ratio": "4:3",
-        "width": 250,
-        "label": "默认文章方面图",
-        "info": "展示在文章列表封面图，建议尺寸400x300px"
-      },
-      {
-        "id": "video_url",
-        "type": "video_picker",
-        "ratio": "4:3",
-        "width": 250,
-        "label": "公司介绍视频",
-        "info": "展示在首页的‘关于我们’栏目"
-      },
-      {
         "id": "slogan",
         "type": "text",
         "label": "t:settings_schema.generic.settings.slogan.label",
@@ -148,6 +124,28 @@
         "label": "导航按钮链接",
         "default": "https://help.baklib.cn/themes/tailpro",
         "info": "请填写https://开头的 URL 地址；设置以后会在文章页底部显示'Submit a request'链接"
+      },
+      {
+        "id": "is_show_author",
+        "type": "checkbox",
+        "label": "文章是否显示作者信息",
+        "default": true
+      },
+      {
+        "id": "default_avatar_url",
+        "type": "image_picker",
+        "ratio": "1:1",
+        "width": 150,
+        "label": "默认作者头像",
+        "info": "展示在文章作者信息处，建议尺寸150x150px"
+      },
+      {
+        "id": "default_thumb_url",
+        "type": "image_picker",
+        "ratio": "4:3",
+        "width": 250,
+        "label": "默认文章方面图",
+        "info": "展示在文章列表封面图，建议尺寸400x300px"
       }
     ]
   },
@@ -160,7 +158,7 @@
         "type": "textarea",
         "label": "客户案例LOGO墙",
         "rows": 10,
-        "info": "客户案例/合作伙伴 LOGO 墙，每行一个 LOGO URL 地址",
+        "info": "客户案例/合作伙伴 LOGO 墙，每行一个 URL 地址，建议添加 5 个以上",
         "default": ""
       },
       {

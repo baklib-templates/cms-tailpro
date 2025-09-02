@@ -10,12 +10,12 @@
     <div class="container xl:max-w-6xl mx-auto px-4">
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg py-10 md:py-6 lg:py-12 px-12 -mt-24">
         <div class="flex flex-wrap flex-row -mx-4 md:mt-2">
-          <div class="flex-shrink w-full max-w-full lg:w-8/12">
+          <div class="flex-shrink w-full max-w-full">
             {% paginate_tag pages, per: 12 %}
               <!-- row -->
               <div class="flex flex-wrap flex-row justify-center -mx-4">
                 {% for item in pages %}
-                  <div class="flex-shrink w-full max-w-full md:w-1/2 px-3 md:px-4 lg:px-6">
+                  <div class="flex-shrink w-full max-w-full sm:w-1/2 md:w-1/3 px-3 md:px-4 lg:px-6">
                     <!-- Card -->
                     <div class="flex flex-col bg-white dark:bg-gray-800 mb-12 rounded overflow-hidden">
                       <div class="relative overflow-hidden">
@@ -49,32 +49,6 @@
           </div>
 
           <!-- sidebar -->
-          <div class="flex-shrink w-full max-w-full lg:w-1/3 lg:ps-16">
-            <aside class="sticky mt-12 lg:mt-0">
-              <!-- widget -->
-              <aside id="categories" class="widget mb-4">
-                <h4 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100"><span>快速导航</span></h4>
-                <ul>
-                  {% for ch in channels %}
-                    <li>
-                      <a class="py-2 flex justify-between items-center hover:text-primary-700 hover:bg-gray-100 dark:hover:text-gray-100" href="{{ ch.path }}">
-                        {{ ch.link_text }}
-                        <span class="text-sm py-1 px-2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20 text-primary-700 dark:text-gray-200 rounded">{{ ch.pages_in_list | size }}</span>
-                      </a>
-                    </li>
-                  {% endfor %}
-                  
-                </ul>
-              </aside><!-- end widget -->
-
-              <!-- widget -->
-              {% if site.settings.aside_html %}
-                <aside id="meta" class="widget mb-4">
-                  {{ site.settings.aside_html }}
-                </aside><!-- end widget -->
-              {% endif %}
-            </aside>          
-          </div><!-- end sidebar -->
         </div>
       </div>
     </div>
@@ -104,22 +78,11 @@
         "label": "t:settings_schema.page.settings.description.label"
       },
       {
-        "id": "tags",
-        "type": "tag_picker",
-        "multiple": true,
-        "label": "t:settings_schema.page.settings.tags.label"
-      },
-      {
         "id": "thumb_image_url",
         "type": "image_picker",
-        "ratio": "4:1",
-        "width": 640,
+        "ratio": "6:2",
+        "width": 400,
         "label": "t:settings_schema.page.settings.thumb_image_url.label"
-      },
-      {
-        "id": "content",
-        "type": "richtext",
-        "label": "t:settings_schema.page.settings.content.label"
       }
     ]
   }
