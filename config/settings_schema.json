@@ -9,7 +9,7 @@
     "theme_author": "Baklib",
     "theme_documentation_url": "https://help.baklib.cn/themes/tailpro",
     "theme_support_url": "https://help.baklib.cn/themes/tailpro/settings",
-    "theme_thumb_url": "images/theme/thumb.webp",
+    "theme_thumb_url": "images/theme/index.webp",
     "theme_preview_images": [
       "images/theme/index.webp",
       "images/theme/channel-card.webp",
@@ -61,17 +61,17 @@
             {
               "name": "关于我们",
               "slug": "about",
-              "template": "channel.side"
+              "template": "channel"
             },
             {
               "name": "服务项目",
               "slug": "services",
-              "template": "channel.list"
+              "template": "channel"
             },
             {
               "name": "产品中心",
               "slug": "products",
-              "template": "channel.list"
+              "template": "channel"
             },
             {
               "name": "新闻资讯",
@@ -81,7 +81,7 @@
             {
               "name": "视频中心",
               "slug": "videos",
-              "template": "channel.videos"
+              "template": "channel"
             }
             
           ]
@@ -190,7 +190,7 @@
         "label": "页头导航菜单设置",
         "rows": 10,
         "info": "格式：menu_name[slug{sub_menu[slug|sub_menu[slug，每行一个分栏。",
-        "default": "Home[/\nNews[/news\nVideos[/videos\nProducts[/products\nFAQs[/faqs\nSitemap[/s/sitemap"
+        "default": "首页[/\n新闻资讯[/news\n服务项目[/services\n产品中心[/products\n视频资源[/videos\n关于我们[/about"
       },
       {
         "id": "footer_menu",
@@ -198,7 +198,7 @@
         "label": "页脚菜单设置",
         "rows": 10,
         "info": "格式：menu_name[slug]{sub_menu[slug|sub_menu[slug，每行一个分栏。",
-        "default": "Products[/products{Catalog1[/products/pro1|Catalog2[/products/pro2\nVideos[/videos{Catalog1[/products/pro1|Catalog2[/products/pro2\nNews[/news{Catalog1[/products/pro1|Catalog2[/products/pro2"
+        "default": "快捷导航[/about{公司介绍[/about|服务项目[/services|网站地图[/s/sitemap\nVideos[/videos{Catalog1[/products/pro1|Catalog2[/products/pro2\nNews[/news{Catalog1[/products/pro1|Catalog2[/products/pro2"
       },
       {
         "id": "company_info",
