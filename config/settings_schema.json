@@ -107,12 +107,6 @@
         "default": "我们是一家创意公司，服务于各行各业的本地和国际企业，从小型到大型企业。"
       },
       {
-        "id": "domain",
-        "type": "text",
-        "label": "t:settings_schema.generic.settings.slogan.label",
-        "default": "https://www.baklib.cn/"
-      },
-      {
         "id": "request_title",
         "type": "text",
         "label": "导航按钮文字",
