@@ -69,8 +69,8 @@
               "template": "channel"
             },
             {
-              "name": "产品中心",
-              "slug": "products",
+              "name": "作品中心",
+              "slug": "portfolio",
               "template": "channel"
             },
             {
