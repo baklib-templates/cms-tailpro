@@ -7,9 +7,9 @@
             <div class="md:col-span-2">
                 <!-- Footer Content -->
                 <div class="leading-relaxed">
-                    <h4 class="font-semibold text-xl mb-6 text-gray-200">关于我们</h4>
-                    {% if site.settings.logo_url %}
-                        <img src="{{ site.settings.logo_url }}" alt="{{ site.name }}" class="h-8 mb-4">
+                    <h4 class="font-semibold text-xl mb-4 text-gray-200">关于我们</h4>
+                    {% if site.settings.footer_logo_url %}
+                        <img src="{{ site.settings.footer_logo_url }}" alt="{{ site.name }}" class="h-12 md:h-24 mb-2">
                     {% endif %}
                     <p class="mb-3">{{ site.settings.company_info }}</p>
                 </div>

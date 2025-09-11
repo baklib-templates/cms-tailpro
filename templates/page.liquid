@@ -1,9 +1,9 @@
 {% comment %} 页面内容部分 {% endcomment %}
 {% assign default_hero_bg = 'images/img-min/bg-planet.jpg' | asset_url %}
-{% if item.settings.thumb_image_url %}
-    {% assign hero_bg = item.settings.thumb_image_url %}
-{% elsif item.parent.settings.thumb_image_url %}
-    {% assign hero_bg = item.parent.settings.thumb_image_url %}
+{% if page.settings.thumb_image_url %}
+    {% assign hero_bg = page.settings.thumb_image_url %}
+{% elsif page.parent.settings.thumb_image_url %}
+    {% assign hero_bg = page.parent.settings.thumb_image_url %}
 {% else %}
     {% assign hero_bg = default_hero_bg %}
 {% endif %}
@@ -25,52 +25,57 @@
               <a href="{{ page.parent.path }}" class="text-sm py-1 px-3 bg-yellow-300 text-gray-700 rounded">{{ page.parent.link_text }}</a>
             </div>
             <div class="mt-0 pt-8 text-center">
-              <h1 class="text-3xl md:text-4xl leading-normal mb-0 font-bold text-white">{{ page.settings.title }}</h1>           
+              <h1 class="text-3xl md:text-4xl leading-normal mb-0 font-bold text-white">{{ page.settings.title }}</h1>
+              <p class="text-gray-300 mt-4">{{ page.settings.description }}</p>              
             </div>
+            
           </div>
         </div><!-- end content -->
       </div>
     </div>
   </div><!-- End hero -->
   
+
   <!-- =========={ POST }==========  -->
   <div id="post-content" class="relative bg-white dark:bg-gray-800 pb-12">
     <div class="container xl:max-w-6xl mx-auto px-4">
       <div class="flex flex-wrap flex-row -mx-4 justify-center">
         <div class="max-w-full w-full lg:w-10/12 px-4">
           <div class="md:px-4">
-            <!-- Post content -->
-            <article class="leading-relaxed pt-12 pb-4">
-              <div class="ProseMirror max-w-full overflow-x-auto">
-                {{ page.settings.content }}
-              </div>
-            </article>
-
             <!-- author -->
             {% if site.settings.is_show_author %}
-              <div class="flex flex-wrap flex-row -mx-4 justify-center py-4 border-t border-gray-300 dark:border-gray-700">
-                <div class="flex-shrink max-w-full px-4 w-1/3 sm:w-1/4 md:w-1/6">
+              <div class="flex flex-wrap flex-row space-x-3 -mx-4 py-4">
+                <div class="">
                   <a href="javascript:void(0);"><img class="rounded-full border max-w-full h-auto dark:border-gray-700" src="{{ page.author.avatar_url | default: site.default_avatar_url }}" alt="author"></a>
                 </div>
-                <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-3/4 md:w-10/12">
+                <div class="">
                   <!--name-->
                   <p class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
                     <span class="font-semibold">{{ page.author.name }}</span>
                   </p>
                   <!--description-->
-                  <p>{{ site.settings.slogan }}</p>
+                  <p class="text-gray-500 text-sm dark:text-gray-400">
+                    <time pubdate datetime="{{ page.published_at }}" title="{{ page.published_at }}">发布于：{{ page.published_at | date: "%Y-%m-%d" }}</time> 
+                    <br/> 浏览：{{ page.visits_count }}</p>
                 </div>
               </div>
             {% endif %}
 
+            <!-- Post content -->
+            <article class="leading-relaxed pb-4">
+              <div class="ProseMirror prose xl:prose-lg max-w-full overflow-x-auto">
+                {{ page.settings.content }}
+              </div>
+            </article>
+
             <!-- Comments -->
             <!-- Feedback -->
             <div class="max-w-4xl mx-auto mt-2">
-              {%# render "feedback_form", page: page %}
-              {%# render "feedback_btn", page: page %}
               {% for tag in page.settings.tags %}
                 {% render 'tag', tag: tag %}
               {% endfor %}
+              {% render "feedback_form", page: page %}
+              {%# render "feedback_btn", page: page %}
             </div>
           </div>
         </div>
@@ -79,6 +84,11 @@
   </div><!-- End Contact Form -->
 </main>
 
+<div class="container xl:max-w-6xl mx-auto">
+  <div class="max-w-full w-full lg:w-10/12 px-4 py-4">
+    {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
+  </div>
+</div>
 
 {% schema %}
   {
@@ -110,8 +120,8 @@
       {
         "id": "thumb_image_url",
         "type": "image_picker",
-        "ratio": "4:1",
-        "width": 640,
+        "ratio": "4:3",
+        "width": 200,
         "label": "t:settings_schema.page.settings.thumb_image_url.label"
       },
       {

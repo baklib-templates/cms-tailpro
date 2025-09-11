@@ -97,13 +97,21 @@
         "type": "image_picker",
         "ratio": "6:2",
         "width": 150,
-        "label": "t:settings_schema.generic.settings.logo_url.label",
-        "info": "t:settings_schema.generic.settings.logo_url.info"
+        "label": "网站 LOGO",
+        "info": "展示在页头导航栏"
+      },
+      {
+        "id": "footer_logo_url",
+        "type": "image_picker",
+        "ratio": "8:2",
+        "width": 150,
+        "label": "页脚 LOGO",
+        "info": "展示在页脚导航栏"
       },
       {
         "id": "slogan",
         "type": "text",
-        "label": "t:settings_schema.generic.settings.slogan.label",
+        "label": "公司一句话口号",
         "default": "我们是一家创意公司，服务于各行各业的本地和国际企业，从小型到大型企业。"
       },
       {
