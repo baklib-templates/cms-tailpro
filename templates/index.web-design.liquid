@@ -72,7 +72,7 @@
           <div class="flex flex-wrap flex-row -mx-4 pt-12">
             {% for line in counter_lines %}
               {% assign line_arr = line | split: '|' %}
-              <div class="flex-shrink max-w-full px-4 w-full sm:w-1/2 lg:w-1/4">
+              <div class="flex-shrink max-w-full px-4 w-1/2 md:w-1/4">
                 <div class="pb-12">
                   <div class="text-center">
                     <p class="text-3xl leading-normal font-semibold text-gray-100 mb-1"><span class="counter">{{ line_arr[0] }}</span></p>
@@ -98,7 +98,7 @@
             <!-- slider brand -->
             <div class="nav-dark-button" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
               {% for url in brand_logos %}
-                <div class="flex-shrink max-w-full items-center justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-3 lg:px-6 text-center">
+                <div class="flex-shrink max-w-full items-center justify-center w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-4 lg:py-1 px-3 lg:px-6 text-center">
                     <img class="brands-image hover:opacity-80 max-h-12 w-auto items-center content-center" src="{{ url }}" alt="Brand LOGO">
                 </div>
               {% endfor %}
