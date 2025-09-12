@@ -11,8 +11,8 @@
     <div class="flex flex-wrap flex-row -mx-4 lightgallery-thumbnail">
       {% for item in page.children_in_list %}
         <figure data-src="{{ item.settings.thumb_image_url }}" class="flex-shrink max-w-full px-4 w-1/2 md:w-1/3 lg:w-1/5 group" data-sub-html="{{ item.link_text }}">
-          <div class="relative overflow-hidden cursor-pointer mb-6">
-            <img class="block w-full h-auto transform duration-500 hover:scale-125" src="{{ item.settings.thumb_image_url }}" alt="{{ item.link_text }}">
+          <div class="relative text-center items-center overflow-hidden cursor-pointer mb-6">
+            <img class="block object-contain h-auto max-h-48 transform duration-500 hover:scale-125" src="{{ item.settings.thumb_image_url }}" alt="{{ item.link_text }}">
             <figcaption class="absolute inset-x-0 bottom-0 h-12 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-primary-700 text-center">
               <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">{{ item.link_text }}</h3>
             </figcaption>

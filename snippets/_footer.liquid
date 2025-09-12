@@ -4,7 +4,7 @@
     <div class="container xl:max-w-6xl mx-auto px-4 pt-16 pb-5 lg:pb-16">
         <div class="grid grid-cols-2 md:grid-cols-5 gag-4 xl:gap-8">
             <!-- left widget -->
-            <div class="md:col-span-2">
+            <div class="col-span-5 sm:col-span-2">
                 <!-- Footer Content -->
                 <div class="leading-relaxed">
                     <h4 class="font-semibold text-xl mb-4 text-gray-200">关于我们</h4>
@@ -22,7 +22,7 @@
             {%  assign sub_menus_count =  sub_menus | size %}
 
             {% if sub_menus_count > 0 %}
-                <div class="flex flex-col" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                <div class="hidden sm:flex flex-col" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                     <a class="font-semibold text-xl mb-4 text-gray-200" href="{{ parent_menu[1] | default: 'javascript:void(0);' }}" :aria-expanded="open">{{ parent_menu[0] }}</a>
                     <!-- 2nd level menu -->
                     <ul class="">
@@ -38,7 +38,7 @@
                 </div>
             {% else %}
                 <div class="">
-                <a class="" href="{{ parent_menu[1] | default: '#'}}">{{ parent_menu[0] }}</a>
+                    <a class="" href="{{ parent_menu[1] | default: '#'}}">{{ parent_menu[0] }}</a>
                 </div>
             {% endif %}
             {% endfor %}

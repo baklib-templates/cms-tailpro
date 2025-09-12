@@ -1,9 +1,9 @@
 {% comment %} 页面内容部分 {% endcomment %}
 {% assign default_hero_bg = 'images/img-min/bg-planet.jpg' | asset_url %}
-{% if page.settings.thumb_image_url %}
-    {% assign hero_bg = page.settings.thumb_image_url %}
-{% elsif page.parent.settings.thumb_image_url %}
+{% if page.parent.settings.thumb_image_url %}
     {% assign hero_bg = page.parent.settings.thumb_image_url %}
+{% elsif page.settings.thumb_image_url %}
+    {% assign hero_bg = page.settings.thumb_image_url %}
 {% else %}
     {% assign hero_bg = default_hero_bg %}
 {% endif %}

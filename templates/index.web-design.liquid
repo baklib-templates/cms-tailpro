@@ -17,11 +17,11 @@
 {% assign counter_lines_size = counter_lines | size %}
 
 
-<main id="content">
+<main id="content" class="relative">
   <!-- =========={ SLIDER }==========  -->
   <div id="slider" class="relative bg-primary-900">
     <div class="hero-slider nav-inset-button nav-light-dots carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "pageDots": true, "autoPlay": 4000 }'>
-      <div class="w-full px-0 py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_one_image_url | default: default_hero_image }}");background-size: cover;'>
+      <div class="w-full px-0 py-4 md:py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_one_image_url | default: default_hero_image }}");background-size: cover;'>
 
         <!-- background overlay -->
         <div class="absolute top-0 start-0 w-full h-full opacity-30 bg-primary" style="z-index:-1;"></div>
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="w-full px-0 py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_two_image_url | default: default_hero_image }}");background-size: cover;'>
+      <div class="w-full px-0 y-4 md:py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_two_image_url | default: default_hero_image }}");background-size: cover;'>
         <!-- background overlay -->
         <div class="absolute top-0 start-0 w-full h-full opacity-30 bg-secondary" style="z-index:-1;"></div>
 
@@ -66,7 +66,7 @@
   
   <!-- =========={ COUNTERS }==========  -->
   {% if counter_lines_size > 1 %}
-    <div class="relative -mt-32 lg:-mt-24 overflow-hidden">
+    <div class="relative -mt-64 lg:-mt-24 overflow-hidden">
       <div class="container xl:max-w-6xl mx-auto px-4">
         <div class="mb-12 bg-primary-700 rounded-xl shadow">
           <div class="flex flex-wrap flex-row -mx-4 pt-12">
@@ -119,8 +119,7 @@
           <!-- content -->
           <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 lg:order-2 self-center">
             <div class="mb-12 lg:mb-0 lg:ms-12 lg:pe-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">
-              <h2 class="text-4xl leading-normal font-bold text-gray-800 dark:text-gray-100 mb-3">
-                {{ about_page.settings.title | default: 'Story Behind Our Digital Marketing Agency' }}</h2>
+              <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">{{ about_page.settings.title }}</h2>
               <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2 mb-12">
                 {{ about_page.settings.description | default: 'Upgency is the leading digital marketing agency in New York. We are striving to provide integrated digital marketing solutions.' }}
                 </p>
@@ -179,7 +178,7 @@
         <img class="absolute inset-0 w-full h-full object-cover opacity-60" src="{{ page.settings.section_image_url | default: default_hero_image }}" width="1280" height="400" alt=" Hero About">
         <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900" aria-hidden="true"></div>
     </div>
-    <div class="py-24"></div>
+    <div class="py-12 lg:py-16"></div>
 </section>
 
 
@@ -195,17 +194,17 @@
                     <h4 class="text-2xl lg:text-3xl font-black font-red-hat-display mb-8">最新内容</h4>
 
                     <!-- Articles container -->
-                    <div class="grid gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8 items-start">
+                    <div class="grid gap-4 md:gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8 items-start">
                         {% for item in newest_pages %}
                             {% if item.settings.is_top or item.settings.is_recommend %}
                                 {% continue %}
                             {% endif %}
                             <!-- 1st article -->
-                            <article class="flex flex-col h-full border p-2">
+                            <article class="flex flex-col h-full border p-2 hover:bg-primary-50 group {% if forloop.index0 < 2 %} bg-primary-50 {% endif %}">
                                 <header>
                                     <a class="block" href="{{ item.path }}"></a>
-                                        <figure class="relative {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 9 or forloop.index == 10 %} h-44 {% else %} h-0 pb-9/16 {% endif %}">
-                                            <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.settings.thumb_image_url | default: site.settings.default_thumb_url }}" width="352" height="198" alt="News 05" />
+                                        <figure class="relative {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 9 or forloop.index == 10 %} h-64 {% else %} h-0 pb-9/16 {% endif %}">
+                                            <img class="absolute inset-0 w-full h-full object-cover transform duration-500 hover:scale-90" src="{{ item.settings.thumb_image_url | default: site.settings.default_thumb_url }}" width="352" height="198" alt="{{ item.link_text }}" />
                                         </figure>
                                     </a>
                                     <a class="hover:underline" href="{{ item.path }}">
@@ -236,7 +235,7 @@
                         <h4 class="text-2xl lg:text-3xl font-black tracking-tight font-red-hat-display mb-5">热门推荐 🎉</h4>
                         <ul class="-my-3">
                             {% for item in hot_pages %}
-                                <li class="flex py-3 border-b border-slate-200 dark:border-slate-800">
+                                <li class="flex py-3 border-b border-slate-200 dark:border-slate-800 hover:bg-primary-50">
                                     <div class="md:text-2xl text-xl font-black tracking-tight w-12 font-red-hat-display text-slate-400 dark:text-slate-600 shrink-0 mt-1">0{{ forloop.index }}</div>
                                     <article>
                                         <a class="hover:underline" href="{{ item.path }}">
