@@ -130,7 +130,8 @@
       {
         "id": "is_show_author",
         "type": "checkbox",
-        "label": "文章是否显示作者信息",
+        "label": "文章是否显示文章作者信息",
+        "info": "包括作者头像、昵称，发布日期，浏览量",
         "default": true
       },
       {

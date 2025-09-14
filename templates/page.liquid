@@ -41,12 +41,12 @@
     <div class="container xl:max-w-6xl mx-auto px-4">
       <div class="flex flex-wrap flex-row -mx-4 justify-center">
         <div class="max-w-full w-full lg:w-10/12 px-4">
-          <div class="md:px-4">
+          <div class="p-4">
             <!-- author -->
             {% if site.settings.is_show_author %}
               <div class="flex flex-wrap flex-row space-x-3 -mx-4 py-4">
                 <div class="">
-                  <a href="javascript:void(0);"><img class="rounded-full border h-12 md:h-20 dark:border-gray-700" src="{{ page.author.avatar_url | default: site.default_avatar_url }}" alt="author"></a>
+                  <a href="javascript:void(0);"><img class="rounded-full border-2 border-primary/30 shadow-xl w-8 h-8 md:w-12 md:h-12 dark:border-gray-700" src="{{ page.author.avatar_url | default: site.default_avatar_url }}" alt="author"></a>
                 </div>
                 <div class="">
                   <!--name-->
