@@ -203,9 +203,15 @@
       },
       {
         "id": "company_info",
-        "type": "text",
+        "type": "html",
         "label": "页脚公司信息",
         "default": "Tailwind template designer, we build web templates, themes and other goodies, putting a lot of love in every pixel and design."
+      },
+      {
+        "id": "copyright_info",
+        "type": "html",
+        "label": "页脚版权信息",
+        "default": "Copyright © Baklib Inc. | All rights reserved."
       }
     ]
   }
