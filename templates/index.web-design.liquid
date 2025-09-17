@@ -90,28 +90,30 @@
   
 
   <!-- =========={ Brand }==========  -->
-  {% if brand_logos_size > 1 %}
-    <div id="partner-brand" class="relative py-3 md:py-6 bg-white dark:bg-gray-800">
-      <div class="container xl:max-w-6xl mx-auto px-4">
-        <div class="lex flex-wrap flex-row -mx-4 justify-center">
-          <div class="w-full px-4">
-            <!-- slider brand -->
-            <div class="nav-dark-button" data-flickity='{ "cellAlign": "center", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
-              {% for url in brand_logos %}
-                <div class="flex-shrink max-w-full w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-3 lg:px-6 text-center">
-                  <a href="javascript:void(0);" class="inline-block">
-                    <img class="hover:brands-image object-contain opacity-80 hover:opacity-100 " src="{{ url }}" alt="{{site.name}} Brand LOGO">
-                  </a>
-                </div>
-              {% endfor %}
-            </div><!-- end slider brand -->
+  {% if site.settings.brand_logos_on %}
+    {% if brand_logos_size > 1 %}
+      <div id="partner-brand" class="relative py-3 md:py-6 bg-white dark:bg-gray-800">
+        <div class="container xl:max-w-6xl mx-auto px-4">
+          <div class="lex flex-wrap flex-row -mx-4 justify-center">
+            <div class="w-full px-4">
+              <!-- slider brand -->
+              <div class="nav-dark-button" data-flickity='{ "cellAlign": "center", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
+                {% for url in brand_logos %}
+                  <div class="flex-shrink max-w-full w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-3 lg:px-6 text-center">
+                    <a href="javascript:void(0);" class="inline-block">
+                      <img class="hover:brands-image object-contain opacity-80 hover:opacity-100 " src="{{ url }}" alt="{{site.name}} Brand LOGO">
+                    </a>
+                  </div>
+                {% endfor %}
+              </div><!-- end slider brand -->
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  {% else %}
-    {% render 'demo/brands' %}
-  {% endif %}<!-- End brand-->
+    {% else %}
+      {% render 'demo/brands' %}
+    {% endif %}<!-- End brand-->
+  {% endif %}
 
   <!-- =========={ ABOUT }==========  -->
   {% if about_page %}

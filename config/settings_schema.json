@@ -156,6 +156,7 @@
     "name": "定制页面版块设计",
     "settings": [
       {"id": "cta_title","type": "html","label": "首页CTA行动号召（50 字以内）"},
+      { "id": "brand_logos_on", "type": "checkbox", "label": "是否显示本版块", "info": "如果选中，则需要设置以下内容，否则略过", "default": true },
       {
         "id": "brand_logos",
         "type": "textarea",
