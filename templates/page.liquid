@@ -14,63 +14,63 @@
     <!-- background parallax -->
     <img class="jarallax-img" src="{{ hero_bg }}" alt="title">
     <!-- background overlay -->
-    <div class="absolute top-0 start-0 w-full h-full opacity-90 bg-primary-700" style="z-index:-1;"></div>
+    <div class="absolute top-0 w-full h-full opacity-90 start-0 bg-primary-700" style="z-index:-1;"></div>
 
-    <div class="container xl:max-w-6xl mx-auto px-4">
-      <div class="flex flex-wrap flex-row -mx-4 items-center justify-center">
+    <div class="container px-4 mx-auto xl:max-w-6xl">
+      <div class="flex flex-row flex-wrap justify-center items-center -mx-4">
         <!-- content -->
-        <div class="max-w-full w-full lg:w-10/12 px-4">
-          <div class="mt-0 py-6 text-center">
+        <div class="px-4 w-full max-w-full lg:w-10/12">
+          <div class="py-6 mt-0 text-center">
             <div class="text-center">
-              <a href="{{ page.parent.path }}" class="text-sm py-1 px-3 bg-yellow-300 text-gray-700 rounded">{{ page.parent.link_text }}</a>
+              <a href="{{ page.parent.path }}" class="px-3 py-1 text-sm text-gray-700 bg-yellow-300 rounded">{{ page.parent.link_text }}</a>
             </div>
-            <div class="mt-0 pt-8 text-center">
-              <h1 class="text-3xl md:text-4xl leading-normal mb-0 font-bold text-white">{{ page.settings.title }}</h1>
-              <p class="text-gray-300 mt-4">{{ page.settings.description }}</p>              
+            <div class="pt-8 mt-0 text-center">
+              <h1 class="mb-0 text-3xl font-bold leading-normal text-white md:text-4xl">{{ page.settings.title }}</h1>
+              <p class="mt-4 text-gray-300">{{ page.settings.description }}</p>
             </div>
-            
+
           </div>
         </div><!-- end content -->
       </div>
     </div>
   </div><!-- End hero -->
-  
+
 
   <!-- =========={ POST }==========  -->
-  <div id="post-content" class="relative bg-white dark:bg-gray-800 pb-12">
-    <div class="container xl:max-w-6xl mx-auto px-4">
-      <div class="flex flex-wrap flex-row -mx-4 justify-center">
-        <div class="max-w-full w-full lg:w-10/12 px-4">
+  <div id="post-content" class="relative pb-12 bg-white dark:bg-gray-800">
+    <div class="container px-4 mx-auto xl:max-w-6xl">
+      <div class="flex flex-row flex-wrap justify-center -mx-4">
+        <div class="px-4 w-full max-w-full lg:w-10/12">
           <div class="p-4">
             <!-- author -->
             {% if site.settings.is_show_author %}
-              <div class="flex flex-wrap flex-row space-x-3 -mx-4 py-4">
+              <div class="flex flex-row flex-wrap py-4 -mx-4 space-x-3">
                 <div class="">
-                  <a href="javascript:void(0);"><img class="rounded-full border-2 border-primary/30 shadow-xl w-8 h-8 md:w-12 md:h-12 dark:border-gray-700" src="{{ page.author.avatar_url | default: site.default_avatar_url }}" alt="author"></a>
+                  <a href="javascript:void(0);"><img class="w-8 h-8 rounded-full border-2 shadow-xl border-primary/30 md:w-12 md:h-12 dark:border-gray-700" src="{{ page.author.avatar_url | default: site.settings.default_avatar_url }}" alt="author"></a>
                 </div>
                 <div class="">
                   <!--name-->
-                  <p class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                  <p class="mb-2 text-lg font-semibold leading-normal text-gray-800 dark:text-gray-100">
                     <span class="font-semibold">{{ page.author.name }}</span>
                   </p>
                   <!--description-->
-                  <p class="text-gray-500 text-sm dark:text-gray-400">
-                    <time pubdate datetime="{{ page.published_at }}" title="{{ page.published_at }}">发布于：{{ page.published_at | date: "%Y-%m-%d" }}</time> 
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <time pubdate datetime="{{ page.published_at }}" title="{{ page.published_at }}">发布于：{{ page.published_at | date: "%Y-%m-%d" }}</time>
                     <br/> 浏览：{{ page.visits_count }}</p>
                 </div>
               </div>
             {% endif %}
 
             <!-- Post content -->
-            <article class="leading-relaxed pb-4">
-              <div class="ProseMirror prose xl:prose-lg max-w-full overflow-x-auto">
+            <article class="pb-4 leading-relaxed">
+              <div class="overflow-x-auto max-w-full ProseMirror prose xl:prose-lg">
                 {{ page.settings.content }}
               </div>
             </article>
 
             <!-- Comments -->
             <!-- Feedback -->
-            <div class="max-w-4xl mx-auto mt-2">
+            <div class="mx-auto mt-2 max-w-4xl">
               {% for tag in page.settings.tags %}
                 {% render 'tag', tag: tag %}
               {% endfor %}
@@ -84,8 +84,8 @@
   </div><!-- End Contact Form -->
 </main>
 
-<div class="container xl:max-w-6xl mx-auto">
-  <div class="max-w-full w-full lg:w-10/12 px-4 py-4">
+<div class="container mx-auto xl:max-w-6xl">
+  <div class="px-4 py-4 w-full max-w-full lg:w-10/12">
     {% render 'breadcrumb', breadcrumb: page.breadcrumb  %}
   </div>
 </div>

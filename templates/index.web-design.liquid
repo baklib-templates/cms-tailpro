@@ -21,19 +21,19 @@
   <!-- =========={ SLIDER }==========  -->
   <div id="slider" class="relative bg-primary-900">
     <div class="hero-slider nav-inset-button nav-light-dots carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "adaptiveHeight": true, "pageDots": true, "autoPlay": 4000 }'>
-      <div class="w-full px-0 py-4 md:py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_one_image_url | default: default_hero_image }}");background-size: cover;'>
+      <div class="z-0 px-0 py-4 w-full md:py-12" style='min-height: 520px;background-image: url("{{ page.settings.slider_one_image_url | default: default_hero_image }}");background-size: cover;'>
 
         <!-- background overlay -->
-        <div class="absolute top-0 start-0 w-full h-full opacity-30 bg-primary" style="z-index:-1;"></div>
+        <div class="absolute top-0 w-full h-full opacity-30 start-0 bg-primary" style="z-index:-1;"></div>
 
-        <div class="container xl:max-w-6xl mx-auto px-4">
-          <div class="flex flex-wrap flex-row -mx-4 items-center justify-center">
+        <div class="container px-4 mx-auto xl:max-w-6xl">
+          <div class="flex flex-row flex-wrap justify-center items-center -mx-4">
             <!-- content -->
-            <div class="max-w-full px-4 w-full md:w-10/12">
-              <div class="mt-12 py-6 lg:py-12 text-center">
-                <h1 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-semibold text-white capitalize mb-8">
+            <div class="px-4 w-full max-w-full md:w-10/12">
+              <div class="py-6 mt-12 text-center lg:py-12">
+                <h1 class="mb-8 text-4xl font-semibold leading-tight text-white capitalize lg:text-5xl lg:leading-snug">
                   {{ page.settings.slider_one_title | default: '我们为您的企业设计和开发精美的网站。' }} </h1>
-                <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-transparent border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:text-gray-900 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0" href="{{ page.settings.slider_one_url  | default: '#' }}">
+                <a class="inline-block px-5 py-3 leading-normal text-center text-gray-100 bg-transparent rounded-md border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:text-gray-900 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0" href="{{ page.settings.slider_one_url  | default: '#' }}">
                     了解更多
                   </a>
               </div>
@@ -42,18 +42,18 @@
         </div>
       </div>
 
-      <div class="w-full px-0 y-4 md:py-12 z-0" style='min-height: 520px;background-image: url("{{ page.settings.slider_two_image_url | default: default_hero_image }}");background-size: cover;'>
+      <div class="z-0 px-0 w-full y-4 md:py-12" style='min-height: 520px;background-image: url("{{ page.settings.slider_two_image_url | default: default_hero_image }}");background-size: cover;'>
         <!-- background overlay -->
-        <div class="absolute top-0 start-0 w-full h-full opacity-30 bg-secondary" style="z-index:-1;"></div>
+        <div class="absolute top-0 w-full h-full opacity-30 start-0 bg-secondary" style="z-index:-1;"></div>
 
-        <div class="container xl:max-w-6xl mx-auto px-4">
-          <div class="flex flex-wrap flex-row -mx-4 items-center justify-center">
+        <div class="container px-4 mx-auto xl:max-w-6xl">
+          <div class="flex flex-row flex-wrap justify-center items-center -mx-4">
             <!-- content -->
-            <div class="max-w-full px-4 w-full md:w-10/12">
-              <div class="mt-12 py-6 lg:py-12 text-center">
-                <h2 class="text-4xl leading-tight lg:text-5xl lg:leading-snug font-semibold text-white capitalize mb-8">
+            <div class="px-4 w-full max-w-full md:w-10/12">
+              <div class="py-6 mt-12 text-center lg:py-12">
+                <h2 class="mb-8 text-4xl font-semibold leading-tight text-white capitalize lg:text-5xl lg:leading-snug">
                   {{ page.settings.slider_two_title | default: '我们为您的企业设计和开发精美的网站。' }} </h2>
-                <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-transparent border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:text-gray-900 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0" href="{{ page.settings.slider_two_url |  default: '#' }}">
+                <a class="inline-block px-5 py-3 leading-normal text-center text-gray-100 bg-transparent rounded-md border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:text-gray-900 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0" href="{{ page.settings.slider_two_url |  default: '#' }}">
                   了解更多
                 </a>
               </div>
@@ -63,20 +63,20 @@
       </div>
     </div>
   </div><!-- end slider-->
-  
+
   <!-- =========={ COUNTERS }==========  -->
   {% if counter_lines_size > 1 %}
-    <div class="relative -mt-64 lg:-mt-24 overflow-hidden">
-      <div class="container xl:max-w-6xl mx-auto px-4">
-        <div class="mb-4 bg-primary-700 rounded-xl shadow">
-          <div class="flex flex-wrap flex-row -mx-4 pt-12">
+    <div class="overflow-hidden relative -mt-64 lg:-mt-24">
+      <div class="container px-4 mx-auto xl:max-w-6xl">
+        <div class="mb-4 rounded-xl shadow bg-primary-700">
+          <div class="flex flex-row flex-wrap pt-12 -mx-4">
             {% for line in counter_lines %}
               {% assign line_arr = line | split: '|' %}
-              <div class="flex-shrink max-w-full px-4 w-1/2 md:w-1/4">
+              <div class="flex-shrink px-4 w-1/2 max-w-full md:w-1/4">
                 <div class="pb-12">
                   <div class="text-center">
-                    <p class="text-3xl leading-normal font-semibold text-gray-100 mb-1"><span class="counter">{{ line_arr[0] }}</span></p>
-                    <p class="text-lg leading-normal font-normal text-gray-200 mb-0">{{ line_arr[1] }}</p>
+                    <p class="mb-1 text-3xl font-semibold leading-normal text-gray-100"><span class="counter">{{ line_arr[0] }}</span></p>
+                    <p class="mb-0 text-lg font-normal leading-normal text-gray-200">{{ line_arr[1] }}</p>
                   </div>
                 </div>
               </div>
@@ -87,21 +87,21 @@
     </div>
   {% endif %}
   <!-- end counters -->
-  
+
 
   <!-- =========={ Brand }==========  -->
   {% if site.settings.brand_logos_on %}
     {% if brand_logos_size > 1 %}
-      <div id="partner-brand" class="relative py-3 md:py-6 bg-white dark:bg-gray-800">
-        <div class="container xl:max-w-6xl mx-auto px-4">
-          <div class="lex flex-wrap flex-row -mx-4 justify-center">
-            <div class="w-full px-4">
+      <div id="partner-brand" class="relative py-3 bg-white md:py-6 dark:bg-gray-800">
+        <div class="container px-4 mx-auto xl:max-w-6xl">
+          <div class="flex-row flex-wrap justify-center -mx-4 lex">
+            <div class="px-4 w-full">
               <!-- slider brand -->
               <div class="nav-dark-button" data-flickity='{ "cellAlign": "center", "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "imagesLoaded": true }'>
                 {% for url in brand_logos %}
-                  <div class="flex-shrink max-w-full w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-3 lg:px-6 text-center">
+                  <div class="flex-shrink px-3 w-1/2 max-w-full text-center md:w-1/3 lg:w-1/4 xl:w-1/5 lg:px-6">
                     <a href="javascript:void(0);" class="inline-block">
-                      <img class="hover:brands-image object-contain opacity-80 hover:opacity-100 " src="{{ url }}" alt="{{site.name}} Brand LOGO">
+                      <img class="object-contain opacity-80 hover:brands-image hover:opacity-100" src="{{ url }}" alt="{{site.name}} Brand LOGO">
                     </a>
                   </div>
                 {% endfor %}
@@ -117,18 +117,18 @@
 
   <!-- =========={ ABOUT }==========  -->
   {% if about_page %}
-    <div id="about" class="relative py-6 md:py-10 bg-white dark:bg-gray-800">
-      <div class="container xl:max-w-6xl mx-auto px-4">
-        <div class="flex flex-wrap flex-row -mx-4">
+    <div id="about" class="relative py-6 bg-white md:py-10 dark:bg-gray-800">
+      <div class="container px-4 mx-auto xl:max-w-6xl">
+        <div class="flex flex-row flex-wrap -mx-4">
           <!-- content -->
-          <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 lg:order-2 self-center">
+          <div class="flex-shrink self-center px-4 w-full max-w-full lg:w-1/2 lg:order-2">
             <div class="mb-12 lg:mb-0 lg:ms-12 lg:pe-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">
-              <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">{{ about_page.settings.title }}</h2>
-              <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2 mb-12">
+              <h2 class="mb-2 text-2xl font-bold leading-normal text-gray-800 md:text-3xl dark:text-gray-100">{{ about_page.settings.title }}</h2>
+              <p class="pb-2 mx-auto mb-12 text-xl font-light leading-relaxed text-gray-500">
                 {{ about_page.settings.description | default: 'Upgency is the leading digital marketing agency in New York. We are striving to provide integrated digital marketing solutions.' }}
                 </p>
               <!-- button -->
-              <a href="{{ about_page.path }}" class="py-3 px-5 -ms-1 rounded-md leading-5 text-gray-100 bg-primary-700 border border-primary-700 hover:text-white hover:bg-primary-800 hover:ring-0 hover:border-primary-800 focus:bg-primary-800 focus:border-primary-800 focus:outline-none focus:ring-0 me-3">
+              <a href="{{ about_page.path }}" class="px-5 py-3 leading-5 text-gray-100 rounded-md border -ms-1 bg-primary-700 border-primary-700 hover:text-white hover:bg-primary-800 hover:ring-0 hover:border-primary-800 focus:bg-primary-800 focus:border-primary-800 focus:outline-none focus:ring-0 me-3">
                 <!-- <i class="fas fa-paper-plane me-1"></i> -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" class="inline-block me-2" fill="currentColor" viewBox="0 0 512 512"><path d="M53.12,199.94l400-151.39a8,8,0,0,1,10.33,10.33l-151.39,400a8,8,0,0,1-15-.34L229.66,292.45a16,16,0,0,0-10.11-10.11L53.46,215A8,8,0,0,1,53.12,199.94Z" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><line x1="460" y1="52" x2="227" y2="285" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
                 了解详情
@@ -137,11 +137,11 @@
           </div><!-- end content -->
 
           <!-- play -->
-          <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 lg:order-1">
-            <div class="relative rounded-md overflow-hidden hover:shadow-xl">
-              <img src="{{ about_page.settings.thumb_image_url |  default: default_about_image }}" class="max-w-full w-full h-auto" alt="background images">
-              <div class="absolute start-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 lightgallery-thumbnail">
-                
+          <div class="flex-shrink px-4 w-full max-w-full lg:w-1/2 lg:order-1">
+            <div class="overflow-hidden relative rounded-md hover:shadow-xl">
+              <img src="{{ about_page.settings.thumb_image_url |  default: default_about_image }}" class="w-full max-w-full h-auto" alt="background images">
+              <div class="absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 start-1/2 lightgallery-thumbnail">
+
               </div>
             </div>
           </div><!-- end team -->
@@ -150,7 +150,7 @@
     </div>
   {% else %}
     {% render 'demo/about' %}
-  {% endif %}  
+  {% endif %}
   <!-- end about -->
 
   <!-- =========={ SERVICE }==========  -->
@@ -167,8 +167,8 @@
 
   <!-- =========={ HTML }==========  -->
   {% if page.settings.html_content %}
-    <div id="about" class="relative py-6 md:py-10 bg-white dark:bg-gray-800">
-        <div class="container xl:max-w-6xl mx-auto px-4">
+    <div id="about" class="relative py-6 bg-white md:py-10 dark:bg-gray-800">
+        <div class="container px-4 mx-auto xl:max-w-6xl">
           {{ page.settings.html_content }}
         </div>
     </div>
@@ -176,10 +176,10 @@
 
 </main>
 
-<section class="relative max-w-6xl mx-auto">
+<section class="relative mx-auto max-w-6xl">
     <!-- Background image -->
-    <div class="absolute inset-0 pt-16 box-content -z-1">
-        <img class="absolute inset-0 w-full h-full object-cover opacity-60" src="{{ page.settings.section_image_url | default: default_hero_image }}" width="1280" height="400" alt=" Hero About">
+    <div class="box-content absolute inset-0 pt-16 -z-1">
+        <img class="object-cover absolute inset-0 w-full h-full opacity-60" src="{{ page.settings.section_image_url | default: default_hero_image }}" width="1280" height="400" alt=" Hero About">
         <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-slate-900" aria-hidden="true"></div>
     </div>
     <div class="py-12 lg:py-16"></div>
@@ -187,18 +187,18 @@
 
 
 <!-- Posts list -->
-<section class="relative py-6 md:py-12 -mt-24 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section class="relative py-6 -mt-24 md:py-12 dark:border-slate-800">
+    <div class="px-4 mx-auto max-w-6xl sm:px-6">
         <div class="">
             <div class="lg:flex lg:justify-between">
 
                 <!-- Main content -->
                 <div class="lg:grow">
                     <!-- Section title -->
-                    <h4 class="text-2xl lg:text-3xl font-black font-red-hat-display mb-8">最新内容</h4>
+                    <h4 class="mb-8 text-2xl font-black lg:text-3xl font-red-hat-display">最新内容</h4>
 
                     <!-- Articles container -->
-                    <div class="grid gap-4 md:gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8 items-start">
+                    <div class="grid gap-4 items-start md:gap-12 sm:grid-cols-2 sm:gap-x-6 md:gap-y-8">
                         {% for item in newest_pages %}
                             {% if item.settings.is_top or item.settings.is_recommend %}
                                 {% continue %}
@@ -208,11 +208,11 @@
                                 <header>
                                     <a class="block" href="{{ item.path }}"></a>
                                         <figure class="relative {% if forloop.index == 3 or forloop.index == 4 or forloop.index == 9 or forloop.index == 10 %} h-64 {% else %} h-0 pb-9/16 {% endif %}">
-                                            <img class="absolute inset-0 w-full h-full object-cover transform duration-500 hover:scale-90" src="{{ item.settings.thumb_image_url | default: site.settings.default_thumb_url }}" width="352" height="198" alt="{{ item.link_text }}" />
+                                            <img class="object-cover absolute inset-0 w-full h-full duration-500 transform hover:scale-90" src="{{ item.settings.thumb_image_url | default: site.settings.default_thumb_url }}" width="352" height="198" alt="{{ item.link_text }}" />
                                         </figure>
                                     </a>
                                     <a class="hover:underline" href="{{ item.path }}">
-                                        <h3 class="md:text-xl text-lg tracking-tight font-red-hat-display mb-2">
+                                        <h3 class="mb-2 text-lg tracking-tight md:text-xl font-red-hat-display">
                                             {{ item.settings.title}}
                                         </h3>
                                     </a>
@@ -220,7 +220,7 @@
                                 <div class="text-slate-500 dark:text-slate-300 grow line-clamp-2">{{ item.settings.description |  truncate: 120 }}</div>
                                 <footer class="flex items-center mt-4">
                                     <a href="javascript:void(0);">
-                                        <img class="rounded-full shrink-0 mr-3" src="{{ item.author.avatar_url | default: site.settings.default_avatar }}" width="22" height="22" alt="Author 03" />
+                                        <img class="mr-3 rounded-full shrink-0" src="{{ item.author.avatar_url | default: site.settings.default_avatar_url }}" width="22" height="22" alt="Author 03" />
                                     </a>
                                     <div class="text-sm text-slate-500">
                                         · <span class="text-slate-500">{{ item.published_at | date: '%Y-%m-%d' }}</span>
@@ -236,14 +236,14 @@
 
                     <!-- Popular posts -->
                     <div class="mb-8">
-                        <h4 class="text-2xl lg:text-3xl font-black tracking-tight font-red-hat-display mb-5">热门推荐 🎉</h4>
+                        <h4 class="mb-5 text-2xl font-black tracking-tight lg:text-3xl font-red-hat-display">热门推荐 🎉</h4>
                         <ul class="-my-3">
                             {% for item in hot_pages %}
                                 <li class="flex py-3 border-b border-slate-200 dark:border-slate-800 hover:bg-primary-50">
-                                    <div class="md:text-2xl text-xl font-black tracking-tight w-12 font-red-hat-display text-slate-400 dark:text-slate-600 shrink-0 mt-1">0{{ forloop.index }}</div>
+                                    <div class="mt-1 w-12 text-xl font-black tracking-tight md:text-2xl font-red-hat-display text-slate-400 dark:text-slate-600 shrink-0">0{{ forloop.index }}</div>
                                     <article>
                                         <a class="hover:underline" href="{{ item.path }}">
-                                            <h3 class="font-red-hat-display tracking-tight mb-1">
+                                            <h3 class="mb-1 tracking-tight font-red-hat-display">
                                                 {{ item.link_text }}
                                             </h3>
                                         </a>
@@ -277,7 +277,7 @@
         ],
         "sub_page_templates": ["channel"],
         "settings": [
-          
+
           {"id": "counter_lines", "type": "textarea", "label": "数据统计栏目","info": "每行一个，格式：数据|描述", "default": "9年|成熟的团队丰富的经验\n800+|先进企业客户的选择\n10.5K|在线知识库和网站数量\n1000+K|在线托管的数字资源数\n"},
 
           {"type": "header", "content": "首页轮播1" },

@@ -1,0 +1,47 @@
+site:
+  language: "zh-CN"
+  time_zone: "Asia/Shanghai"
+  favicon: "images/img/favicon.png"
+  settings:
+    logo_url: "images/logo.png"
+    footer_logo_url: "images/logo.png"
+    slogan: "TailPro · 以创意驱动的全栈数字营销门户"
+    request_title: "预约咨询"
+    request_url: "https://www.baklib.cn/themes/cms-tailpro"
+    is_show_author: true
+    default_avatar_url: "images/img-min/avatar.png"
+    default_thumb_url: "images/img-min/blog_1.jpg"
+    cta_title: |
+      <h2 class="text-3xl font-semibold text-white">立即启动您的企业门户升级计划</h2>
+      <p class="mt-3 text-lg text-white/80">填写联系信息，我们将在 1 个工作日内为您安排专属顾问，提供演示与改版建议。</p>
+    brand_logos_on: true
+    brand_logos: |
+      https://images.unsplash.com/photo-1500522144261-ea64433bbe27?w=320
+      https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=320
+      https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=320
+      https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=320
+      https://images.unsplash.com/photo-1485988412941-77a35537dae4?w=320
+    aside_html: |
+      <div class="p-4 text-white bg-gradient-to-r rounded-xl from-primary-600 to-secondary-500">
+        <h4 class="text-lg font-semibold">需要定制服务？</h4>
+        <p class="mt-2 text-sm text-white/80">联系我们的顾问团队，获取行业解决方案白皮书与排期报价。</p>
+        <a href="https://www.baklib.cn/themes/cms-tailpro" class="inline-flex gap-1 items-center px-3 py-2 mt-3 text-sm font-semibold rounded-md bg-white/90 text-primary-700 hover:bg-white">
+          获取解决方案
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 3.5a.5.5 0 0 1 .8-.4l4 3a.5.5 0 0 1 0 .8l-4 3A.5.5 0 0 1 6 9.5V8H1.5a.5.5 0 0 1 0-1H6z"/></svg>
+        </a>
+      </div>
+    head_html: ""
+    header_menu: |
+      首页[/
+      服务项目[/services
+      作品中心[/portfolio
+      新闻资讯[/news
+      视频中心[/videos
+      关于我们[/about
+    company_info: "TailPro Experience Studio 专注于品牌官网、数字营销与内容体验设计，持续为科技、制造、金融等行业客户提供创意与技术支持。"
+    copyright_info: "© 2025 TailPro Experience Studio · Powered by Baklib CMS"
+    footer_menu: |
+      快捷导航[/about{公司介绍[/about/company|服务项目[/services|作品中心[/portfolio
+      资源中心[/services/experience-design{体验设计[/services/experience-design|案例合集[/portfolio
+      新闻与洞察[/news{趋势洞察[/news/industry-trends|版本更新[/news/product-update|多语言实践[/news/global-playbook
+      视频课程[/videos{产品演示[/videos/video-tour|案例分享[/videos/video-case-study
